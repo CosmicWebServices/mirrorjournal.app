@@ -60,13 +60,15 @@
         <div class="container">
             <div class="row">
                 <div class="one-third column">
-                    <img src="img/simplistic.png" class="u-max-full-width" />
+                    <img src="img/simplistic-light.png" id="sl" class="u-max-full-width" />
+                    <img src="img/simplistic.png" id="s" class="u-max-full-width hide" />
                     <h3 class="section-heading">Simplistic</h3>
                     <p class="section-description">Mirror Journal is designed to be easy to use and look amazing. It
                     works with light and dark mode... it's as beautiful either way.</p>
                 </div>
                 <div class="one-third column">
-                    <img src="img/secret.png" class="u-max-full-width" />
+                    <img src="img/secret-light.png" id="sel" class="u-max-full-width" />
+                    <img src="img/secret.png" id="se" class="u-max-full-width hide" />
                     <h3 class="section-heading">Secrecy</h3>
                     <p class="section-description">Sometimes it's hard to write down your feelings when you're worried that
                         it can't be in secret. That's why Mirror Journal allows AES-256 encryption for jounral entries behind
@@ -74,7 +76,8 @@
                         Also everything is stored locally and we will never track you.</p>
                 </div>
                 <div class="one-third column">
-                    <img src="img/reflect.png" class="u-max-full-width" />
+                    <img src="img/reflect-light.png" id="rl" class="u-max-full-width" />
+                    <img src="img/reflect.png" id="r" class="u-max-full-width hide" />
                     <h3 class="section-heading">Self-reflection</h3>
                     <p class="section-description">Mirror Journal is designed for you to look back and reflect on the past easily.
                     Using notes you are able to annotate past journal entries.</p>
@@ -95,9 +98,21 @@
             if (document.getElementById('darkmode').checked) {
                 document.body.className = "dark-mode";
                 document.getElementById('mode').innerText = 'Dark mode';
+                document.getElementById('sl').classList.add('hide');
+                document.getElementById('sel').classList.add('hide');
+                document.getElementById('rl').classList.add('hide');
+                document.getElementById('s').classList.remove('hide');
+                document.getElementById('se').classList.remove('hide');
+                document.getElementById('r').classList.remove('hide');
             } else {
                 document.body.className = "";
                 document.getElementById('mode').innerText = 'Light mode';
+                document.getElementById('sl').classList.remove('hide');
+                document.getElementById('sel').classList.remove('hide');
+                document.getElementById('rl').classList.remove('hide');
+                document.getElementById('s').classList.add('hide');
+                document.getElementById('se').classList.add('hide');
+                document.getElementById('r').classList.add('hide');
             }
         }
 
@@ -105,6 +120,12 @@
             document.getElementById('darkmode').checked = true;
             document.body.className = "dark-mode";
             document.getElementById('mode').innerText = 'Dark mode';
+            document.getElementById('sl').classList.add('hide');
+            document.getElementById('sel').classList.add('hide');
+            document.getElementById('rl').classList.add('hide');
+            document.getElementById('s').classList.remove('hide');
+            document.getElementById('se').classList.remove('hide');
+            document.getElementById('r').classList.remove('hide');
         }
     </script>
 </body>

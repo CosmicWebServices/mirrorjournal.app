@@ -121,7 +121,9 @@
     }
 }
 
-
+.hide {
+    display: none;
+}
 
 .dark-mode {
     background: #222222;
