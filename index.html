@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <div style="text-align: center; padding-top: 20px;">
+        <label class="switch">
+            <input type="checkbox" id="darkmode" onclick="darkMode()">
+            <span class="slider round"></span>
+        </label>
+        <br />
+        <p id="mode" style="padding: 0; margin: 0;">Light mode</p>
+    </div>
+
     <div class="desktop-show">
         <div class="section hero">
             <div class="container">
@@ -39,7 +48,7 @@
                 <div class="row">
                     <div class="column">
                         <h4 class="hero-heading">Mirror Journal</h4>
-                        <h5>The digital journal designed around secrecy and self-reflection.</h5>
+                        <h5>The simplistic digital journal designed around secrecy and self-reflection.</h5>
                         <a href="https://apps.apple.com/app/id1524166698"><img src="img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" /></a>
                     </div>
                 </div>
@@ -47,11 +56,56 @@
         </div>
     </div>
 
-    <div class="section get-help">
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="one-third column">
+                    <img src="img/simplistic.png" class="u-max-full-width" />
+                    <h3 class="section-heading">Simplistic</h3>
+                    <p class="section-description">Mirror Journal is designed to be easy to use and look amazing. It
+                    works with light and dark mode... it's as beautiful either way.</p>
+                </div>
+                <div class="one-third column">
+                    <img src="img/secret.png" class="u-max-full-width" />
+                    <h3 class="section-heading">Secrecy</h3>
+                    <p class="section-description">Sometimes it's hard to write down your feelings when you're worried that
+                        it can't be in secret. That's why Mirror Journal allows AES-256 encryption for jounral entries behind
+                        a custom passcode. You can also put expiration dates on entries for them to automatically delete.
+                        Also everything is stored locally and we will never track you.</p>
+                </div>
+                <div class="one-third column">
+                    <img src="img/reflect.png" class="u-max-full-width" />
+                    <h3 class="section-heading">Self-reflection</h3>
+                    <p class="section-description">Mirror Journal is designed for you to look back and reflect on the past easily.
+                    Using notes you are able to annotate past journal entries.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
         <div class="container">
             <h3 class="section-heading">Need help?</h3>
             <p class="section-description">Email us at <a href="mail-to:help@mirrorjournal.app">help@mirrorjournal.app</a></p>
         </div>
     </div>
+
+    <script>
+        function darkMode() {
+            if (document.getElementById('darkmode').checked) {
+                document.body.className = "dark-mode";
+                document.getElementById('mode').innerText = 'Dark mode';
+            } else {
+                document.body.className = "";
+                document.getElementById('mode').innerText = 'Light mode';
+            }
+        }
+
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.getElementById('darkmode').checked = true;
+            document.body.className = "dark-mode";
+            document.getElementById('mode').innerText = 'Dark mode';
+        }
+    </script>
 </body>
 </html>
